@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="TOP_CENTER" spacing="10.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.trabalho2.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label text="Cadastro de Pessoas" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <GridPane hgap="10" vgap="10">
+        <Label text="Nome:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="txtNome" GridPane.columnIndex="1" GridPane.rowIndex="0" promptText="Nome Completo"/>
+
+        <Label text="CPF:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="txtCpf" GridPane.columnIndex="1" GridPane.rowIndex="1" promptText="000.000.000-00"/>
+
+        <Label text="E-mail:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <TextField fx:id="txtEmail" GridPane.columnIndex="1" GridPane.rowIndex="2" promptText="exemplo@email.com"/>
+
+        <Label text="Telefone:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <TextField fx:id="txtTelefone" GridPane.columnIndex="1" GridPane.rowIndex="3" promptText="(00) 00000-0000"/>
+    </GridPane>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Salvar" onAction="#onSalvarClick" minWidth="80"/>
+        <Button text="Cancelar" onAction="#onCancelarClick" minWidth="80"/>
+        <Button text="Listar" onAction="#onListarClick" minWidth="80"/>
+    </HBox>
+
+    <TableView fx:id="tblPessoas" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colNome" text="Nome" prefWidth="150"/>
+            <TableColumn fx:id="colCpf" text="CPF" prefWidth="100"/>
+            <TableColumn fx:id="colEmail" text="E-mail" prefWidth="150"/>
+            <TableColumn fx:id="colTelefone" text="Telefone" prefWidth="100"/>
+        </columns>
+    </TableView>
+</VBox>
